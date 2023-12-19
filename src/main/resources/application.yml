@@ -1,0 +1,79 @@
+spring:
+  datasource:
+    driver-class-name:  com.mysql.jdbc.Driver
+    url : jdbc:mysql://localhost:3306/zmovie?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    filters: stat, log4j, wall
+    maxPoolPreparedStatementPerConnectionSize: 20
+    use-global-data-source-stat: true
+    connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+  jackson:
+    time-zone: GMT+8
+
+  rabbitmq:
+    username: admin
+    password: admin
+    virtual-host: /
+    host: 47.107.31.98
+    port: 5672
+
+
+  redis:
+    host: 47.107.31.98
+    port: 6379
+    password: 991128
+    pool:
+      max-active: 8
+      max-wait: 1
+      max-idle: 8
+      min-idle: 0
+    timeout: 100
+
+
+
+#  profiles:
+#    active:
+
+logging:
+  level:
+    root: info
+    com.zmovie: debug
+  file:
+    name: log/zmovie.log
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: auto
+
+
+
+
+security:
+  base:
+    enable:fasle
+
+
+
+
+server:
+  port: 8081
+
+
