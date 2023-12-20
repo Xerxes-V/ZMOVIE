@@ -23,6 +23,8 @@ public class JedisTest {
 
         jedisPoolConfig.setMaxTotal(100);
 
+//        JedisPool jedisPool = new JedisPool(jedisPoolConfig,"47.107.31.36",6379,1000,"010507",1);
+
 //        RedisPoolFactory rf = new RedisPoolFactory();
         JedisPool jedisPool = rf.JedisPoolFactory();
 
